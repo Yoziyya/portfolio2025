@@ -1,80 +1,142 @@
+/* 1. VARIÁVEIS CSS (Custom Properties) */
+/* Tornam a manutenção e a alteração de tema mais rápidas e fáceis. */
+:root {
+    --primary-color: #2f2f2f; /* Cor principal (header, footer, linha do tempo) */
+    --text-color: #333; /* Cor do texto principal */
+    --bg-white: white; /* Cor de fundo de cards e conteúdo */
+    --spacing-large: 2rem; /* (~32px) */
+    --spacing-medium: 1.5rem; /* (~24px) */
+    --spacing-small: 1rem; /* (~16px) */
+}
 
+/* 2. BODY OTIMIZADO */
 body {
     font-family: Arial, sans-serif;
+    color: var(--text-color);
+    
+    /* Layout */
     margin: 0;
-    padding: 20px;
+    padding: var(--spacing-medium); /* De 20px para unidade relativa */
     scroll-behavior: smooth;
-    text-align: center;
-    color: #333;
+    
+    /* Acessibilidade/Tipografia */
+    line-height: 1.6; /* Melhor legibilidade e espaçamento entre linhas */
+
+    /* REMOÇÃO: text-align: center; -> Isso será tratado com um contêiner (veja .container) */
+    
+    /* Fundo */
     background-image: url('papel-pardo.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed; /* Opcional: faz o fundo não rolar com o conteúdo */
 }
 
+/* 3. CLASSE PARA CENTRALIZAR CONTEÚDO (Recomendado para o seu HTML principal) */
+.container {
+    max-width: 1100px; /* Define uma largura máxima */
+    margin: 0 auto; /* Centraliza o bloco na horizontal */
+    padding: 0 1rem; /* Padding interno para evitar toque nas bordas em mobile */
+}
+
+/* 4. SEÇÕES E COMPONENTES */
 header {
-    background: #2f2f2f;
-    color: white;
-    padding: 1em;
+    background: var(--primary-color);
+    color: var(--bg-white);
+    padding: var(--spacing-small); /* Uso de variável */
     text-align: center;
 }
 
 header h1 {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem; /* Uso de unidade relativa */
 }
 
 nav a {
-    margin: 0 10px;
+    margin: 0 0.8rem; /* Uso de unidade relativa */
     color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
 section {
-    padding: 2em;
+    padding: var(--spacing-large); /* Uso de variável */
     transition: all 0.6s ease-out;
+    text-align: left; /* Garante que o texto da seção fique alinhado à esquerda por padrão */
 }
 
 .card {
-    background: white;
-    padding: 1em;
-    margin: 1em 0;
-    border-left: 5px solid #222;
+    background: var(--bg-white);
+    padding: var(--spacing-small);
+    margin: var(--spacing-small) 0;
+    border-left: 5px solid var(--primary-color); /* Uso de variável para consistência */
     border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: Adiciona uma sombra suave */
 }
 
 footer {
-    background: #2f2f2f;
-    color: white;
+    background: var(--primary-color);
+    color: var(--bg-white);
     text-align: center;
-    padding: 1em;
+    padding: var(--spacing-small);
 }
 
+/* 5. LINHA DO TEMPO (Com visualização) */
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: var(--spacing-medium); /* Uso de variável */
     position: relative;
-    padding-left: 30px;
+    padding-left: 40px; /* Espaço para a linha vertical e o ponto */
+    text-align: left; /* Garante alinhamento esquerdo do conteúdo */
+}
+
+/* ADICIONADO: Linha vertical usando pseudo-elemento ::before */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 15px; 
+    width: 2px;
+    background-color: #ccc;
 }
 
 .event {
     position: relative;
     cursor: pointer;
+    transition: transform 0.3s ease; /* Opcional: Animação ao passar o mouse */
+}
+
+/* ADICIONADO: Ponto em cada evento usando pseudo-elemento ::before */
+.event::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem; 
+    left: -25px; /* Alinha o ponto à linha vertical */
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    border: 3px solid var(--bg-white); /* Borda para se destacar do fundo */
+    z-index: 10;
+}
+
+.event:hover {
+    transform: translateY(-2px); /* Efeito sutil ao interagir */
 }
 
 .year {
     font-weight: bold;
-    color: #2f2f2f;
-    font-size: 1.2em;
+    color: var(--primary-color);
+    font-size: 1.3rem; /* Uso de unidade relativa */
     display: block;
-    margin-bottom: 1em;
+    margin-bottom: 0.5rem;
 }
 
 .event img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 1em;
+    margin-bottom: var(--spacing-small);
     border-radius: 5px;
 }
 
@@ -82,12 +144,20 @@ footer {
     display: none;
 }
 
+/* 6. MEDIA QUERIES (Responsividade) */
 @media (max-width: 768px) {
-    section {
-        padding: 1em;
+    
+    body {
+        padding: var(--spacing-small); /* Reduz o padding geral em mobile */
     }
+
+    section {
+        padding: var(--spacing-medium) 0.5rem; /* Ajusta padding para mobile */
+    }
+    
     nav a {
         display: block;
-        margin: 10px 0;
+        margin: 0.5rem 0; /* Espaçamento menor em mobile */
+        text-align: center;
     }
 }
