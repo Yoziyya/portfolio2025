@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFYB5N4W0N"></script>
     <script>
@@ -11,503 +12,503 @@
     
       gtag('config', 'G-HFYB5N4W0N');
     </script>
-        <title>Portfólio de Josias</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* --- Estilos da Linha do Tempo --- */
-        .timeline .event a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            color: inherit;
-            margin-bottom: 10px;
-        }
+    <title>Portfólio de Josias</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* --- Estilos da Linha do Tempo --- */
+        .timeline .event a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            margin-bottom: 10px;
+        }
 
-        .timeline .event img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+        .timeline .event img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
-        /* --- Estilos da Seção de Clipping --- */
-        #clipping {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #f9f9f9;
-        }
+        /* CORREÇÃO 2: Adicionado CSS para ocultar o texto inicial */
+        .timeline .event p.hidden {
+            display: none;
+        }
 
-        #clipping h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
+        /* --- Estilos da Seção de Clipping --- */
+        #clipping {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
 
-        #clipping p {
-            margin-bottom: 30px;
-            color: #555;
-        }
+        #clipping h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
 
-        .clipping-carousel {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            cursor: grab; /* Altera o cursor para indicar que é arrastável */
-        }
+        #clipping p {
+            margin-bottom: 30px;
+            color: #555;
+        }
 
-        .clipping-carousel:active {
-            cursor: grabbing;
-        }
+        .clipping-carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            cursor: grab; /* Altera o cursor para indicar que é arrastável */
+        }
 
-        .carousel-wrapper {
-            display: flex;
-            transition: transform 0.3s ease-out; /* Transição para o efeito de "snap" */
-            touch-action: pan-y; /* Permite o scroll vertical, mas impede o horizontal por padrão, o que é controlado por JS */
-        }
+        .clipping-carousel:active {
+            cursor: grabbing;
+        }
 
-        .reportagem {
-            flex: 0 0 100%;
-            padding: 0 10px; /* Espaço para as imagens */
-            box-sizing: border-box;
-            user-select: none; /* Impede que o texto seja selecionado ao arrastar */
-            -webkit-user-drag: none; /* Impede o arrasto de imagens em alguns navegadores */
-        }
-        
-        .reportagem img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-out; /* Transição para o efeito de "snap" */
+            touch-action: pan-y; /* Permite o scroll vertical, mas impede o horizontal por padrão, o que é controlado por JS */
+        }
 
-        /* --- Estilos da Seção de Projetos --- */
-        #projetos {
-            padding: 50px 20px;
-            background-color: #f9f9f9;
-        }
+        .reportagem {
+            flex: 0 0 100%;
+            padding: 0 10px; /* Espaço para as imagens */
+            box-sizing: border-box;
+            user-select: none; /* Impede que o texto seja selecionado ao arrastar */
+            -webkit-user-drag: none; /* Impede o arrasto de imagens em alguns navegadores */
+        }
+        
+        .reportagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-        #projetos h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+        /* --- Estilos da Seção de Projetos --- */
+        #projetos {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
 
-        .card {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+        #projetos h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-        .card .project-image {
-            max-width: 200px;
-            height: auto;
-            border-radius: 8px;
-            object-fit: cover;
-        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-        .card .project-content {
-            flex-grow: 1;
-        }
+        .card .project-image {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
 
-        .card h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #333;
-        }
+        .card .project-content {
+            flex-grow: 1;
+        }
 
-        .card p {
-            color: #555;
-            line-height: 1.6;
-        }
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-        @media (max-width: 768px) {
-            .card {
-                flex-direction: column;
-                text-align: center;
-            }
+        .card p {
+            color: #555;
+            line-height: 1.6;
+        }
 
-            .card .project-image {
-                margin-bottom: 15px;
-                max-width: 100%;
-            }
-        }
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+                text-align: center;
+            }
 
-        /* --- Estilos dos Ícones Sociais --- */
-        .social-icons {
-            margin-top: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-        }
+            .card .project-image {
+                margin-bottom: 15px;
+                max-width: 100%;
+            }
+        }
 
-        .social-icons a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: #333;
-            font-size: 1.2em;
-            transition: transform 0.3s ease;
-        }
+        /* --- Estilos dos Ícones Sociais --- */
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
 
-        .social-icons a i {
-            font-size: 5em;
-            margin-bottom: 8px;
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
+        .social-icons a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
 
-        /* Cores padrão para cada ícone */
-        .social-icons .fa-facebook {
-            color: #3b5998;
-        }
+        .social-icons a i {
+            font-size: 5em;
+            margin-bottom: 8px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
 
-        .social-icons .fa-instagram {
-            color: #C13584;
-        }
+        /* Cores padrão para cada ícone */
+        .social-icons .fa-facebook {
+            color: #3b5998;
+        }
 
-        .social-icons .fa-whatsapp {
-            color: #25D366;
-        }
+        .social-icons .fa-instagram {
+            color: #C13584;
+        }
 
-        .social-icons .fa-envelope {
-            color: #D44638;
-        }
+        .social-icons .fa-whatsapp {
+            color: #25D366;
+        }
 
-        /* Efeito de hover */
-        .social-icons a:hover {
-            transform: translateY(-5px);
-        }
+        .social-icons .fa-envelope {
+            color: #D44638;
+        }
 
-        .social-icons a:hover i {
-            transform: scale(1.1);
-            filter: brightness(1.1);
-        }
-    </style>
+        /* Efeito de hover */
+        .social-icons a:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-icons a:hover i {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Josias Gonçalves • Produtor Cultural</h1>
-        <nav>
-            <a href="#inicio">Apresentação</a>
-            <a href="#sobre">Linha do tempo</a>
-            <a href="#clipping">Postagens</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
+    <header>
+        <h1>Josias Gonçalves • Produtor Cultural</h1>
+        <nav>
+            <a href="#inicio">Apresentação</a>
+            <a href="#sobre">Linha do tempo</a>
+            <a href="#clipping">Postagens</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
 
-    <section id="inicio">
-        <h2>Minha História</h2>
-        <p>Meu nome é Josias Gonçalves Cruz de Andrade. Nasci no Rio de Janeiro, na comunidade do Jacarezinho, onde vivi até os cinco anos de idade. Em 1996, minha família se mudou para Belo Horizonte, mais precisamente para a Favela do Índio, e foi lá que passei a maior parte da minha infância.  
+    <section id="inicio">
+        <h2>Minha História</h2>
+        <p>Meu nome é Josias Gonçalves Cruz de Andrade. Nasci no Rio de Janeiro, na comunidade do Jacarezinho, onde vivi até os cinco anos de idade. Em 1996, minha família se mudou para Belo Horizonte, mais precisamente para a Favela do Índio, e foi lá que passei a maior parte da minha infância.  
 
 Mesmo com as complicações de morar em uma favela e as constantes enchentes do córrego ao lado do nosso barraco, que levavam o pouco que tínhamos, foi nesse lugar que senti a maior união de uma comunidade. 
 
 Em 2001, nos mudamos para Vespasiano — a primeira vez que tive um asfalto do lado de fora do portão e um número de casa. Foi no bairro Gávea II que tive meu primeiro contato com a dança — um encontro que abriu as portas para o universo da arte e da cultura na minha vida. Desde então, já se passaram mais de vinte anos nessa caminhada. Comecei aos 13 anos e, hoje, atuo como pesquisador, professor, produtor cultural e dançarino, sempre com o propósito de fortalecer a cultura e transformar realidades por meio da arte.</p>
-    </section>
+    </section>
 
-    <section id="sobre">
-        <h2>Linha do tempo</h2>
-        <section id="linha-do-tempo">
-            <h2>Minha Caminhada na Cultura</h2>
-            <div class="timeline">
-                <div class="event" onclick="toggleText(this)">
-                    <span class="year">2004</span>
-                        <img src="01" alt="Foto de 2004">
-                    </a>
-                    <p class="hidden">Em 2004, conheci um coletivo que estava nascendo no bairro Jardim da Glória, em Vespasiano-MG. Era uma seletiva para integrar o grupo de dança Impacto. Fiz o teste, fui aprovado e, a partir dali, comecei a me apresentar com o grupo em espetáculos de dança e teatro. 
+    <section id="sobre">
+        <h2>Linha do tempo</h2>
+        <section id="linha-do-tempo">
+            <h2>Minha Caminhada na Cultura</h2>
+            <div class="timeline">
+                <div class="event" onclick="toggleText(this)">
+                    <span class="year">2004</span>
+                    <img src="01" alt="Foto de 2004">
+                    <p class="hidden">Em 2004, conheci um coletivo que estava nascendo no bairro Jardim da Glória, em Vespasiano-MG. Era uma seletiva para integrar o grupo de dança Impacto. Fiz o teste, fui aprovado e, a partir dali, comecei a me apresentar com o grupo em espetáculos de dança e teatro. 
 
 Durante cinco anos, vivemos uma intensa jornada artística, levando arte a escolas, igrejas e espaços comunitários. Em 2009, o grupo se desfez por diversos motivos — entre eles, a necessidade de muitos integrantes de ingressarem no mercado de trabalho formal. Ainda assim, a experiência com o Impacto foi fundamental para a minha formação e para o início da minha trajetória na cultura.</p>
-                </div>
-                <div class="event" onclick="toggleText(this)">
-                    <span class="year">2008</span>
-                        <img src="02" alt="Foto de 2008">
-                    </a>
-                    <p class="hidden">Em 2008, a convite de um amigo, tive a oportunidade de conhecer um treino de danças urbanas na Igreja São José, no bairro Nova Esperança, em Santa Luzia/MG. As oficinas faziam parte do programa Fica Vivo e eram ministradas pelo professor Black-A (Fernando), uma figura essencial no desenvolvimento da cultura Hip-Hop em Santa Luzia. Infelizmente, as oficinas de danças urbanas e de DJ do programa Fica Vivo foram encerradas logo após a pandemia. 
+                </div>
+                <div class="event" onclick="toggleText(this)">
+                    <span class="year">2008</span>
+                    <img src="02" alt="Foto de 2008">
+                    <p class="hidden">Em 2008, a convite de um amigo, tive a oportunidade de conhecer um treino de danças urbanas na Igreja São José, no bairro Nova Esperança, em Santa Luzia/MG. As oficinas faziam parte do programa Fica Vivo e eram ministradas pelo professor Black-A (Fernando), uma figura essencial no desenvolvimento da cultura Hip-Hop em Santa Luzia. Infelizmente, as oficinas de danças urbanas e de DJ do programa Fica Vivo foram encerradas logo após a pandemia. 
 
 As últimas atividades foram a minha oficina de breaking no Curumim do Cristina e a última, ministrada pelo meu amigo Jonne James, no Via Colégio — ambas também em Santa Luzia/MG. </p>
-                </div>
-                <div class="event" onclick="toggleText(this)">
-                    <span class="year">2013</span>
-                        <img src="03" alt="Foto de 2013">
-                    </a>
-                    <p class="hidden">Em 2013, o cenário para alguns dançarinos era desafiador: enquanto uns enfrentavam a prisão, outros, como eu, iniciavam suas jornadas no mercado de trabalho. 
+                </div>
+                <div class="event" onclick="toggleText(this)">
+                    <span class="year">2013</span>
+                    <img src="03" alt="Foto de 2013">
+                    <p class="hidden">Em 2013, o cenário para alguns dançarinos era desafiador: enquanto uns enfrentavam a prisão, outros, como eu, iniciavam suas jornadas no mercado de trabalho. 
 
 Muitos dos que cumpriram suas penas retornaram; surgiu um movimento de retorno aos treinos, e eu me juntei a eles para incentivar esses companheiros. Em pouco tempo, fundamos a crew Bio Dínamo, um grupo que se dedicou a fomentar diversos eventos de dança. Nossos encontros uniam exposições de arte, apresentações musicais com MCs locais e workshops de danças. 
 
 Em 2019, após produzir a última edição do "Combate em Família", desliguei-me do grupo, que encerrou suas atividades em 2021.</p>
-                </div>
-                <div class="event" onclick="toggleText(this)">
-                    <span class="year">2017</span>
-                        <img src="04" alt="Foto de 2017">
-                    </a>
-                    <p class="hidden">Em 2017, com o encerramento da maioria das oficinas do programa Fica Vivo, fui indicado pelo professor Wilson como seu sucessor. Decidi estabelecer um novo ponto para as oficinas no antigo espaço do CRAS e Curumim. Mesmo depredado e abandonado pelo poder público, o local possuía um enorme potencial e, para mim, o principal era ocupar esse espaço que nos pertencia com arte. Todas as terças e quintas-feiras, eu caminhava 2 km, do bairro Castanheiras até o Cristina, levando balde, rodo, desinfetante e pano para higienizar o piso onde treinaríamos.</p>
-                </div>
-                 <div class="event" onclick="toggleText(this)">
-                    <span class="year">2023</span>
-                        <img src="tamborderua.jpeg" alt="Foto de 2023">
-                    </a>
-                    <p class="hidden">Em 2023, fui convidado para integrar o coletivo Tambor de Rua, idealizado por Lucas Henrique (Botas Kakomas), com o espetáculo Coração, que trouxe uma fusão entre o ritmo ancestral do atabaque e os estilos urbanos da dança americana, como o breaking, reverenciando aqueles que vieram antes e seus arquétipos. O trabalho propõe um diálogo profundo entre a cultura afro-brasileira e a afro-americana, incorporando também outros elementos em busca da ancestralidade e da identidade cultural.
+                </div>
+                <div class="event" onclick="toggleText(this)">
+                    <span class="year">2017</span>
+                    <img src="04" alt="Foto de 2017">
+                    <p class="hidden">Em 2017, com o encerramento da maioria das oficinas do programa Fica Vivo, fui indicado pelo professor Wilson como seu sucessor. Decidi estabelecer um novo ponto para as oficinas no antigo espaço do CRAS e Curumim. Mesmo depredado e abandonado pelo poder público, o local possuía um enorme potencial e, para mim, o principal era ocupar esse espaço que nos pertencia com arte. Todas as terças e quintas-feiras, eu caminhava 2 km, do bairro Castanheiras até o Cristina, levando balde, rodo, desinfetante e pano para higienizar o piso onde treinaríamos.</p>
+                </div>
+                <div class="event" onclick="toggleText(this)">
+                    <span class="year">2023</span>
+                    <img src="tamborderua.jpeg" alt="Foto de 2023">
+                    <p class="hidden">Em 2023, fui convidado para integrar o coletivo Tambor de Rua, idealizado por Lucas Henrique (Botas Kakomas), com o espetáculo Coração, que trouxe uma fusão entre o ritmo ancestral do atabaque e os estilos urbanos da dança americana, como o breaking, reverenciando aqueles que vieram antes e seus arquétipos. O trabalho propõe um diálogo profundo entre a cultura afro-brasileira e a afro-americana, incorporando também outros elementos em busca da ancestralidade e da identidade cultural.
 Em 2025 estreamos um novo formato do espetáculo para o Palco Giratório do Sesc.</p>
-                </div>
-            </div>
-        </section>
-    </section>
+                </div>
+            </div>
+        </section>
+    </section>
 
-   <section id="clipping">
-        <h2>Acesse</h2>
-        <p>Arraste para o lado para ver minhas atividades e participações</p>
-        <div class="clipping-carousel">
-            <div class="carousel-wrapper">
-                <div class="reportagem">
-                    <a href="https://www.facebook.com/share/1B7RQuJdsF/" target="_blank">
-                        <img src="mostracurio.jpeg" alt="Top Rock Identidade - Mostra Curió">
-                    </a>
-                </div>
-                <div class="reportagem">
-                    <a href="https://bhaz.com.br/guia-bhaz/teatro-exposicoes/cinema-fachada-filmes-teatro-espanca/&ved=2ahUKEwixvorU5eeOAhXSq5UCHT1oHyAQFnoECB8QAQ&usg=AOvVaw3dQfMfIhzqe1M_fj0P_j24" target="_blank">
-                        <img src="cinemafachada.jpeg" alt="Corre no Sinal - Cinema de Fachada">
-                    </a>
-                </div>
-                <div class="reportagem">
-                    <a href="https://www.instagram.com/p/Cze0RP2piRt/?img_index=6&igsh=MWp2ZzYwa2d4Mng1bw==" target="_blank">
-                        <img src="cb01.jpeg" alt="Curumas Batle - BH +Feliz">
-                    </a>
-                </div>
-                <div class="reportagem">
-                    <a href="https://www.youtube.com/live/RCiqpMnfhyQ?si=SCuZ8bb99C5MZCrO" target="_blank">
-                        <img src="seminariourbano.jpeg" alt="Seminário Urbano - LAB">
-                    </a>
-                </div>
-                <div class="reportagem">
-                    <a href="https://www.instagram.com/p/DCpXr85v-Dw/" target="_blank">
-                        <img src="leiaagora.jpeg" alt="Tambor de Rua - Leia Agora">
-                    </a>
-                </div>
-                <div class="reportagem">
-                    <a href="https://www.sympla.com.br/evento/tambor-de-rua-santa-luzia-mg/3022551">
-                        <img src="sesc.jpeg" alt="Tambor de Rua - Palco Giratório Sesc">
-                    </a>
-                </div>
-                <div class="reportagem">
-                    <a href="https://portalbelohorizonte.com.br/virada/2023/eventos/apresentacao-artistica/musica/tambor-de-rua" target="_blank">
-                        <img src="viradacultural.jpeg" alt="Tambor de Rua - Virada Cultural">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="clipping">
+        <h2>Acesse</h2>
+        <p>Arraste para o lado para ver minhas atividades e participações</p>
+        <div class="clipping-carousel">
+            <div class="carousel-wrapper">
+                <div class="reportagem">
+                    <a href="https://www.facebook.com/share/1B7RQuJdsF/" target="_blank">
+                        <img src="mostracurio.jpeg" alt="Top Rock Identidade - Mostra Curió">
+                    </a>
+                </div>
+                <div class="reportagem">
+                    <a href="https://bhaz.com.br/guia-bhaz/teatro-exposicoes/cinema-fachada-filmes-teatro-espanca/&ved=2ahUKEwixvorU5eeOAhXSq5UCHT1oHyAQFnoECB8QAQ&usg=AOvVaw3dQfMfIhzqe1M_fj0P_j24" target="_blank">
+                        <img src="cinemafachada.jpeg" alt="Corre no Sinal - Cinema de Fachada">
+                    </a>
+                </div>
+                <div class="reportagem">
+                    <a href="https://www.instagram.com/p/Cze0RP2piRt/?img_index=6&igsh=MWp2ZzYwa2d4Mng1bw==" target="_blank">
+                        <img src="cb01.jpeg" alt="Curumas Batle - BH +Feliz">
+                    </a>
+                </div>
+                <div class="reportagem">
+                    <a href="https://www.youtube.com/live/RCiqpMnfhyQ?si=SCuZ8bb99C5MZCrO" target="_blank">
+                        <img src="seminariourbano.jpeg" alt="Seminário Urbano - LAB">
+                    </a>
+                </div>
+                <div class="reportagem">
+                    <a href="https://www.instagram.com/p/DCpXr85v-Dw/" target="_blank">
+                        <img src="leiaagora.jpeg" alt="Tambor de Rua - Leia Agora">
+                    </a>
+                </div>
+                <div class="reportagem">
+                    <a href="https://www.sympla.com.br/evento/tambor-de-rua-santa-luzia-mg/3022551">
+                        <img src="sesc.jpeg" alt="Tambor de Rua - Palco Giratório Sesc">
+                    </a>
+                </div>
+                <div class="reportagem">
+                    <a href="https://portalbelohorizonte.com.br/virada/2023/eventos/apresentacao-artistica/musica/tambor-de-rua" target="_blank">
+                        <img src="viradacultural.jpeg" alt="Tambor de Rua - Virada Cultural">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <section id="projetos">
-        <h2>Projetos e Ideias</h2>
-        
-        <div class="card">
-            <img src="caminho-para-imagem-1.jpg" alt="Imagem do projeto A Criação dos mundos" class="project-image">
-            <div class="project-content">
-                <h3>Espetáculo: A Criação dos mundos</h3>
-                <p>Uma proposta de intervenção urbana que traz um olhar por meio de arquétipos da astronomia e abstrações como linguagem, buscando entender a construção de cada percepção da realidade como um universo particular.</p>
-            </div>
-        </div>
-        
-        <div class="card">
-            <img src="caminho-para-imagem-2.jpg" alt="Imagem do projeto Vogue Parade" class="project-image">
-            <div class="project-content">
-                <h3>Vogue Parade</h3>
-                <p>A Vogue Parade é uma fascinante fusão entre a vibração do Soul Train e a exuberância do Ballroom. Imagine um deslumbrante desfile de moda concebido pelos criativos representantes da moda local, unindo-se aos modelos que são verdadeiros artistas da dança em nossa comunidade. Nesse contexto inovador, a avaliação transcende as fronteiras do comum e adentra o domínio do estilo pessoal, originalidade e autenticidade.</p>
-            </div>
-        </div>
-        
-        <div class="card">
-            <img src="caminho-para-imagem-3.jpg" alt="Imagem do projeto Seminário Urbano" class="project-image">
-            <div class="project-content">
-                <h3>Seminário Urbano</h3>
-                <p>O Seminário Urbano é um encontro em que se discutem temas pertinentes relacionados à cultura em contexto urbano.</p>
-            </div>
-        </div>
-        
-        <div class="card">
-            <img src="caminho-para-imagem-4.jpg" alt="Imagem do projeto Rock in The Cypher" class="project-image">
-            <div class="project-content">
-                <h3>Rock in The Cypher</h3>
-                <p>Um evento que busca reunir e potencializar os elementos clássicos da cultura Hip-hop</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="caminho-para-imagem-5.jpg" alt="Imagem do projeto Curumims Burn Battle" class="project-image">
-            <div class="project-content">
-                <h3>Curumims Burn Battle</h3>
-                <p>A proposta consiste em fazer uma batalha de danças onde serão analisadas a execução da dança de forma explosiva, as entradas de cada participante não poderão exceder 30 segundos. Assim tudo será bem fluido e diferente dos eventos de dança tradicionais provocando uma inovação nas formas de dança.</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="caminho-para-imagem-6.jpg" alt="Imagem do projeto Curumims Batle: Sellect Mode" class="project-image">
-            <div class="project-content">
-                <h3>Curumims Batle: Sellect Mode</h3>
-                <p>Desde os primórdios, brincadeiras e confraternizações familiares foram essenciais para a socialização. Inspirado em experiências como o “amigo oculto diferente” que participei, criei para o Curuma’s Battle o formato Select Mode, uma dinâmica de batalha com escolhas estratégicas dos oponentes e rodadas eliminatórias, culminando em um único campeão que recebe o troféu do evento.</p>
-            </div>
-        </div>
-    </section>
+    <section id="projetos">
+        <h2>Projetos e Ideias</h2>
+        
+        <div class="card">
+            <img src="caminho-para-imagem-1.jpg" alt="Imagem do projeto A Criação dos mundos" class="project-image">
+            <div class="project-content">
+                <h3>Espetáculo: A Criação dos mundos</h3>
+                <p>Uma proposta de intervenção urbana que traz um olhar por meio de arquétipos da astronomia e abstrações como linguagem, buscando entender a construção de cada percepção da realidade como um universo particular.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="caminho-para-imagem-2.jpg" alt="Imagem do projeto Vogue Parade" class="project-image">
+            <div class="project-content">
+                <h3>Vogue Parade</h3>
+                <p>A Vogue Parade é uma fascinante fusão entre a vibração do Soul Train e a exuberância do Ballroom. Imagine um deslumbrante desfile de moda concebido pelos criativos representantes da moda local, unindo-se aos modelos que são verdadeiros artistas da dança em nossa comunidade. Nesse contexto inovador, a avaliação transcende as fronteiras do comum e adentra o domínio do estilo pessoal, originalidade e autenticidade.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="caminho-para-imagem-3.jpg" alt="Imagem do projeto Seminário Urbano" class="project-image">
+            <div class="project-content">
+                <h3>Seminário Urbano</h3>
+                <p>O Seminário Urbano é um encontro em que se discutem temas pertinentes relacionados à cultura em contexto urbano.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="caminho-para-imagem-4.jpg" alt="Imagem do projeto Rock in The Cypher" class="project-image">
+            <div class="project-content">
+                <h3>Rock in The Cypher</h3>
+                <p>Um evento que busca reunir e potencializar os elementos clássicos da cultura Hip-hop</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="caminho-para-imagem-5.jpg" alt="Imagem do projeto Curumims Burn Battle" class="project-image">
+            <div class="project-content">
+                <h3>Curumims Burn Battle</h3>
+                <p>A proposta consiste em fazer uma batalha de danças onde serão analisadas a execução da dança de forma explosiva, as entradas de cada participante não poderão exceder 30 segundos. Assim tudo será bem fluido e diferente dos eventos de dança tradicionais provocando uma inovação nas formas de dança.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="caminho-para-imagem-6.jpg" alt="Imagem do projeto Curumims Batle: Sellect Mode" class="project-image">
+            <div class="project-content">
+                <h3>Curumims Batle: Sellect Mode</h3>
+                <p>Desde os primórdios, brincadeiras e confraternizações familiares foram essenciais para a socialização. Inspirado em experiências como o “amigo oculto diferente” que participei, criei para o Curuma’s Battle o formato Select Mode, uma dinâmica de batalha com escolhas estratégicas dos oponentes e rodadas eliminatórias, culminando em um único campeão que recebe o troféu do evento.</p>
+            </div>
+        </div>
+    </section>
 
-    <section id="contato">
-        <h2>Vamos conversar?</h2>
-        <p>Entre em contato para colaborações, editais ou apenas trocar ideias.</p>
-        
-        <div class="social-icons">
-            <a href="https://www.facebook.com/SEU_USUARIO_FACEBOOK" target="_blank" aria-label="Facebook">
-                <i class="fab fa-facebook"></i>
-                <span>Facebook</span>
-            </a>
-            <a href="https://www.instagram.com/Yoziyya" target="_blank" aria-label="Instagram Yoziyya">
-                <i class="fab fa-instagram"></i>
-                <span>@Yoziyya</span>
-            </a>
-            <a href="https://www.instagram.com/curumasbreaking" target="_blank" aria-label="Instagram Curumas Breaking">
-                <i class="fab fa-instagram"></i>
-                <span>@curumasbreaking</span>
-            </a>
-            <a href="https://api.whatsapp.com/send?phone=5531975108934&text=Olá%20Josias,%20vim%20pelo%20seu%20portfólio!" target="_blank" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp</span>
-            </a>
-            <a href="mailto:josiasjr.91@gmail.com" aria-label="E-mail">
-                <i class="fas fa-envelope"></i>
-                <span>E-mail</span>
-            </a>
-        </div>
-    </section>
+    <section id="contato">
+        <h2>Vamos conversar?</h2>
+        <p>Entre em contato para colaborações, editais ou apenas trocar ideias.</p>
+        
+        <div class="social-icons">
+            <a href="https://www.facebook.com/SEU_USUARIO_FACEBOOK" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/Yoziyya" target="_blank" aria-label="Instagram Yoziyya">
+                <i class="fab fa-instagram"></i>
+                <span>@Yoziyya</span>
+            </a>
+            <a href="https://www.instagram.com/curumasbreaking" target="_blank" aria-label="Instagram Curumas Breaking">
+                <i class="fab fa-instagram"></i>
+                <span>@curumasbreaking</span>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=5531975108934&text=Olá%20Josias,%20vim%20pelo%20seu%20portfólio!" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="mailto:josiasjr.91@gmail.com" aria-label="E-mail">
+                <i class="fas fa-envelope"></i>
+                <span>E-mail</span>
+            </a>
+        </div>
+    </section>
 
-    <footer>
-        <p>© 2025 Josias. Criado com afeto e imaginação.</p>
-    </footer>
+    <footer>
+        <p>© 2025 Josias. Criado com afeto e imaginação.</p>
+    </footer>
 
-    <script>
-        function toggleText(element) {
-            const p = element.querySelector("p");
-            p.classList.toggle("hidden");
-        }
+    <script>
+        function toggleText(element) {
+            const p = element.querySelector("p");
+            p.classList.toggle("hidden");
+        }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const carousel = document.querySelector('.clipping-carousel');
-            const slider = carousel.querySelector('.carousel-wrapper');
-            
-            // Clonar os elementos para o carrossel infinito
-            const firstClone = slider.firstElementChild.cloneNode(true);
-            const lastClone = slider.lastElementChild.cloneNode(true);
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.querySelector('.clipping-carousel');
+            const slider = carousel.querySelector('.carousel-wrapper');
+            
+            // Clonar os elementos para o carrossel infinito
+            const firstClone = slider.firstElementChild.cloneNode(true);
+            const lastClone = slider.lastElementChild.cloneNode(true);
 
-            slider.insertBefore(lastClone, slider.firstElementChild);
-            slider.appendChild(firstClone);
+            slider.insertBefore(lastClone, slider.firstElementChild);
+            slider.appendChild(firstClone);
 
-            const reports = Array.from(slider.children);
-            const reportWidth = reports[0].offsetWidth;
-            let currentIndex = 1; // Começa no primeiro item real
+            const reports = Array.from(slider.children);
+            const reportWidth = reports[0].offsetWidth;
+            let currentIndex = 1; // Começa no primeiro item real
 
-            slider.style.transition = 'none';
-            slider.style.transform = `translateX(-${reportWidth}px)`;
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(-${reportWidth}px)`;
 
-            let isDragging = false;
-            let startPos = 0;
-            let currentTranslate = -reportWidth;
-            let prevTranslate = -reportWidth;
-            let animationID;
+            let isDragging = false;
+            let startPos = 0;
+            let currentTranslate = -reportWidth;
+            let prevTranslate = -reportWidth;
+            let animationID;
 
-            reports.forEach((report, index) => {
-                const img = report.querySelector('img');
-                img.addEventListener('dragstart', (e) => e.preventDefault());
-            });
+            reports.forEach((report, index) => {
+                const img = report.querySelector('img');
+                img.addEventListener('dragstart', (e) => e.preventDefault());
+            });
 
-            // Eventos para desktop
-            carousel.addEventListener('mousedown', dragStart);
-            carousel.addEventListener('mouseup', dragEnd);
-            carousel.addEventListener('mouseleave', dragEnd);
-            carousel.addEventListener('mousemove', drag);
+            // Eventos para desktop
+            carousel.addEventListener('mousedown', dragStart);
+            carousel.addEventListener('mouseup', dragEnd);
+            carousel.addEventListener('mouseleave', dragEnd);
+            carousel.addEventListener('mousemove', drag);
 
-            // Eventos para mobile
-            carousel.addEventListener('touchstart', dragStart);
-            carousel.addEventListener('touchend', dragEnd);
-            carousel.addEventListener('touchmove', drag);
+            // Eventos para mobile
+            carousel.addEventListener('touchstart', dragStart);
+            carousel.addEventListener('touchend', dragEnd);
+            carousel.addEventListener('touchmove', drag);
 
-            function dragStart(e) {
-                isDragging = true;
-                startPos = getPositionX(e);
-                animationID = requestAnimationFrame(animation);
-                slider.style.transition = 'none';
-            }
+            function dragStart(e) {
+                isDragging = true;
+                startPos = getPositionX(e);
+                animationID = requestAnimationFrame(animation);
+                slider.style.transition = 'none';
+            }
 
-            function dragEnd() {
-                isDragging = false;
-                cancelAnimationFrame(animationID);
-                const movedBy = currentTranslate - prevTranslate;
+            function dragEnd() {
+                isDragging = false;
+                cancelAnimationFrame(animationID);
+                const movedBy = currentTranslate - prevTranslate;
 
-                if (movedBy < -100) {
-                    currentIndex++;
-                }
-                if (movedBy > 100) {
-                    currentIndex--;
-                }
+                if (movedBy < -100) {
+                    currentIndex++;
+                }
+                if (movedBy > 100) {
+                    currentIndex--;
+                }
 
-                setPositionByIndex();
-            }
+                setPositionByIndex();
+            }
 
-            function drag(e) {
-                if (isDragging) {
-                    const currentPosition = getPositionX(e);
-                    currentTranslate = prevTranslate + currentPosition - startPos;
-                    setSliderPosition();
-                }
-            }
+            function drag(e) {
+                if (isDragging) {
+                    const currentPosition = getPositionX(e);
+                    currentTranslate = prevTranslate + currentPosition - startPos;
+                    setSliderPosition();
+                }
+            }
 
-            function getPositionX(e) {
-                return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-            }
+            function getPositionX(e) {
+                return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+            }
 
-            function animation() {
-                setSliderPosition();
-                if (isDragging) {
-                    requestAnimationFrame(animation);
-                }
-            }
+            function animation() {
+                setSliderPosition();
+                if (isDragging) {
+                    requestAnimationFrame(animation);
+                }
+            }
 
-            function setSliderPosition() {
-                slider.style.transform = `translateX(${currentTranslate}px)`;
-            }
+            function setSliderPosition() {
+                slider.style.transform = `translateX(${currentTranslate}px)`;
+            }
 
-            function setPositionByIndex() {
-                // Adiciona a transição suave
-                slider.style.transition = 'transform 0.3s ease-out';
-                currentTranslate = currentIndex * -reportWidth;
-                prevTranslate = currentTranslate;
-                setSliderPosition();
-            }
+            function setPositionByIndex() {
+                // Adiciona a transição suave
+                slider.style.transition = 'transform 0.3s ease-out';
+                currentTranslate = currentIndex * -reportWidth;
+                prevTranslate = currentTranslate;
+                setSliderPosition();
+            }
 
-            // Ouve a transição para fazer a "troca" invisível
-            slider.addEventListener('transitionend', () => {
-                const totalReports = reports.length - 2; // Exclui os clones
-                
-                if (currentIndex === totalReports + 1) { // Chegou ao final (clone do primeiro)
-                    slider.style.transition = 'none';
-                    currentIndex = 1;
-                    currentTranslate = -reportWidth;
-                    prevTranslate = currentTranslate;
-                    setSliderPosition();
-                }
+            // Ouve a transição para fazer a "troca" invisível
+            slider.addEventListener('transitionend', () => {
+                const totalReports = reports.length - 2; // Exclui os clones
+                
+                if (currentIndex === totalReports + 1) { // Chegou ao final (clone do primeiro)
+                    slider.style.transition = 'none';
+                    currentIndex = 1;
+                    currentTranslate = -reportWidth;
+                    prevTranslate = currentTranslate;
+                    setSliderPosition();
+                }
 
-                if (currentIndex === 0) { // Chegou ao início (clone do último)
-                    slider.style.transition = 'none';
-                    currentIndex = totalReports;
-                    currentTranslate = currentIndex * -reportWidth;
-                    prevTranslate = currentTranslate;
-                    setSliderPosition();
-                }
-            });
+                if (currentIndex === 0) { // Chegou ao início (clone do último)
+                    slider.style.transition = 'none';
+                    currentIndex = totalReports;
+                    currentTranslate = currentIndex * -reportWidth;
+                    prevTranslate = currentTranslate;
+                    setSliderPosition();
+                }
+            });
 
-        });
-    </script>
+        });
+    </script>
 </body>
 </html>
