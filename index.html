@@ -32,7 +32,7 @@
             display: block;
         }
 
-        /* CORREÇÃO 2: Adicionado CSS para ocultar o texto inicial */
+        /* Adicionado CSS para ocultar o texto inicial da Linha do Tempo */
         .timeline .event p.hidden {
             display: none;
         }
@@ -60,7 +60,7 @@
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
-            cursor: grab; /* Altera o cursor para indicar que é arrastável */
+            cursor: grab;
         }
 
         .clipping-carousel:active {
@@ -69,16 +69,16 @@
 
         .carousel-wrapper {
             display: flex;
-            transition: transform 0.3s ease-out; /* Transição para o efeito de "snap" */
-            touch-action: pan-y; /* Permite o scroll vertical, mas impede o horizontal por padrão, o que é controlado por JS */
+            transition: transform 0.3s ease-out;
+            touch-action: pan-y;
         }
 
         .reportagem {
             flex: 0 0 100%;
-            padding: 0 10px; /* Espaço para as imagens */
+            padding: 0 10px;
             box-sizing: border-box;
-            user-select: none; /* Impede que o texto seja selecionado ao arrastar */
-            -webkit-user-drag: none; /* Impede o arrasto de imagens em alguns navegadores */
+            user-select: none;
+            -webkit-user-drag: none;
         }
         
         .reportagem img {
@@ -385,6 +385,11 @@ Em 2025 estreamos um novo formato do espetáculo para o Palco Giratório do Sesc
     </section>
 
     <footer>
+        <p>
+            <a href="#sobre" style="color: #fff; text-decoration: none; margin-right: 15px;">^ Linha do Tempo</a> 
+            | 
+            <a href="#inicio" style="color: #fff; text-decoration: none; margin-left: 15px;">^ Voltar ao Topo</a>
+        </p>
         <p>© 2025 Josias. Criado com afeto e imaginação.</p>
     </footer>
 
