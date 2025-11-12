@@ -80,27 +80,81 @@ footer {
     padding: var(--spacing-small);
 }
 
-/* 5. LINHA DO TEMPO (Com visualização) */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-medium); /* Uso de variável */
-    position: relative;
-    padding-left: 40px; /* Espaço para a linha vertical e o ponto */
-    text-align: left; /* Garante alinhamento esquerdo do conteúdo */
-}
+<style>
+    /* ... (seus estilos existentes) ... */
 
-/* ADICIONADO: Linha vertical usando pseudo-elemento ::before */
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 15px; 
-    width: 2px;
-    background-color: #ccc;
-}
+    /* --- Estilos da Linha do Tempo --- */
+    .timeline {
+        position: relative;
+        padding: 20px 0;
+        list-style: none; /* Garante que não haja marcadores de lista padrão */
+        /* Removido: padding-left aqui, pois o ícone de tênis terá seu próprio padding-left */
+    }
 
+    /* REMOVIDO: Linha vertical usando pseudo-elemento ::before */
+    /* Este bloco de código foi completamente removido:
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 15px; 
+        width: 2px;
+        background-color: #ccc;
+    }
+    */
+
+    .timeline .event {
+        position: relative;
+        margin-bottom: 50px; /* Espaçamento entre os eventos */
+        padding-left: 60px; /* Espaço para o ícone de tênis (ajustado para ficar mais centralizado sem a linha) */
+        text-align: left;
+    }
+
+    .timeline .event .year {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #555;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .timeline .event img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 10px;
+        border-radius: 8px; /* Mantém o estilo das imagens */
+    }
+
+    /* Estilo para o ícone de tênis (substituindo o ponto) */
+    .timeline .event::before {
+        content: '\f54b'; /* Código Unicode para o ícone fa-shoe-prints (Solid) */
+        font-family: "Font Awesome 5 Free"; /* Font family para ícones Solid */
+        font-weight: 900; /* Peso da fonte para ícones Solid */
+        position: absolute;
+        left: 0;
+        top: 0; /* Alinha com o topo do conteúdo do evento */
+        font-size: 2.5em; /* Tamanho do ícone */
+        color: #007bff; /* Cor do ícone, pode ajustar */
+        background-color: #fff; /* Fundo para o ícone, se quiser destacá-lo */
+        border-radius: 50%; /* Se quiser um fundo circular */
+        width: 50px; /* Largura para o fundo circular */
+        height: 50px; /* Altura para o fundo circular */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra para o ícone */
+        z-index: 1; /* Garante que o ícone fique acima de outros elementos se necessário */
+    }
+
+    /* Oculta o parágrafo inicialmente */
+    .timeline .event p.hidden {
+        display: none;
+    }
+
+    /* ... (resto dos seus estilos) ... */
+</style>
 .event {
     position: relative;
     cursor: pointer;
