@@ -24,10 +24,10 @@
     <style>
         /* --- Estilos da Linha do Tempo --- */
         .timeline .event {
-            **list-style: none;** /* CORREÇÃO: Remove o marcador (ponto preto/bolinha) */
+            **list-style: none !important;** /* CORREÇÃO FINAL: Força a remoção do marcador (ponto preto) */
         }
 
-        /* CORREÇÃO: Remove linhas ou conteúdo gerado por CSS antes e depois do elemento */
+        /* CORREÇÃO FINAL: Força a remoção de linhas ou conteúdo gerado por CSS */
         .timeline .event:before,
         .timeline .event:after {
             **content: none !important;** }
@@ -353,14 +353,14 @@ Em 2025 estreamos um novo formato do espetáculo para o Palco Giratório do Sesc
         <div class="card">
             <img src="caminho-para-imagem-5.jpg" alt="Imagem do projeto Curumims Burn Battle" class="project-image">
             <div class="project-content">
-                <h3>Curumims Burn Battle</h3>
+                <h3>Curuma's Burn Battle</h3>
                 <p>A proposta consiste em fazer uma batalha de danças onde serão analisadas a execução da dança de forma explosiva, as entradas de cada participante não poderão exceder 30 segundos. Assim tudo será bem fluido e diferente dos eventos de dança tradicionais provocando uma inovação nas formas de dança.</p>
             </div>
         </div>
         <div class="card">
             <img src="caminho-para-imagem-6.jpg" alt="Imagem do projeto Curumims Batle: Sellect Mode" class="project-image">
             <div class="project-content">
-                <h3>Curumims Batle: Sellect Mode</h3>
+                <h3>Curuma's Battle: Sellect Mode</h3>
                 <p>Desde os primórdios, brincadeiras e confraternizações familiares foram essenciais para a socialização. Inspirado em experiências como o “amigo oculto diferente” que participei, criei para o Curuma’s Battle o formato Select Mode, uma dinâmica de batalha com escolhas estratégicas dos oponentes e rodadas eliminatórias, culminando em um único campeão que recebe o troféu do evento.</p>
             </div>
         </div>
