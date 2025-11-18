@@ -1,11 +1,5 @@
 header {
-    /* 1. Remove a cor de fundo primária (o preto) */
-    /* Se a cor estiver sendo definida em outro lugar, pode ser necessário procurar. */
-    background-color: transparent !important; 
-    
-    /* 2. Aplica a imagem de fundo */
-    background-image: url'./06.jpg'; /* *MUDE ESTE CAMINHO* */
-    
+    background-image: url('./06.jpg');    
     /* 3. Ajustes de exibição da imagem */
     background-size: cover;          /* Garante que a imagem cubra toda a área, cortando o que for necessário. */
     background-position: center center; /* Centraliza a imagem horizontalmente e verticalmente. */
