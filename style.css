@@ -4,7 +4,7 @@ header {
     background-color: transparent !important; 
     
     /* 2. Aplica a imagem de fundo */
-    background-image: url('./06.jpg'); /* *MUDE ESTE CAMINHO* */
+    background-image: url'./06.jpg'; /* *MUDE ESTE CAMINHO* */
     
     /* 3. Ajustes de exibição da imagem */
     background-size: cover;          /* Garante que a imagem cubra toda a área, cortando o que for necessário. */
