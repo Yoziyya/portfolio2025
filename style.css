@@ -1,13 +1,12 @@
-header {
-    background-image: url('./06.jpg');    
-    /* 3. Ajustes de exibição da imagem */
-    background-size: cover;          /* Garante que a imagem cubra toda a área, cortando o que for necessário. */
-    background-position: center center; /* Centraliza a imagem horizontalmente e verticalmente. */
-    background-repeat: no-repeat;    /* Evita que a imagem se repita se o elemento for grande. */
-    background-attachment: scroll;   /* A imagem rola junto com a página. Use 'fixed' se quiser que ela fique parada. */
-    
-    /* Se a altura do header for muito pequena, adicione uma altura mínima para ver a imagem: */
-    min-height: 200px; /* Adapte este valor conforme o layout */
+/* 1. VARIÁVEIS CSS (Custom Properties) */
+/* Tornam a manutenção e a alteração de tema mais rápidas e fáceis. */
+:root {
+    --primary-color: #2f2f2f; /* Cor principal (header, footer, linha do tempo) */
+    --text-color: #333; /* Cor do texto principal */
+    --bg-white: white; /* Cor de fundo de cards e conteúdo */
+    --spacing-large: 2rem; /* (~32px) */
+    --spacing-medium: 1.5rem; /* (~24px) */
+    --spacing-small: 1rem; /* (~16px) */
 }
 /* 2. BODY OTIMIZADO */
 body {
